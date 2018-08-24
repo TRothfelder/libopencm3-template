@@ -22,6 +22,8 @@ The series of articles from Chris Lalancette might be useful for you:
   - [Developing STM32 microcontroller code on Linux (Part 7 of 8, building and running a simple STM32 program)](http://clalance.blogspot.de/2014/01/developing-stm32-microcontroller-code_15.html)
 
 For C++ on embedded projects see [Practical Guide to Bare Metal C++](https://arobenko.gitbooks.io/bare_metal_cpp/content/) or the [PDF - Practical Guide to Bare Metal C++](other/bare_metal_cpp.pdf).
+Also [Modern C++ in embedded systems](https://www.embedded.com/design/programming-languages-and-tools/4438660/Modern-C--in-embedded-systems---Part-1--Myth-and-Reality#).
+And [C++ in Embedded Systemen: Lessons Learned! (german)](https://www.embedded-software-engineering.de/c-in-embedded-systemen-lessons-learned-a-653915/).
 
 External libraries
 ----------------
