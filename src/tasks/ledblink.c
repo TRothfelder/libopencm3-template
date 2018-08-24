@@ -24,7 +24,7 @@ void ledblink_task(void *arg) {
 	for (;;) {
 		gpio_toggle(GPIOD,GPIO13 | GPIO15);
 		#if defined(DEBUG)
-			gpio_set(GPIOD, GPIO12 | GPIO14);
+			gpio_toggle(GPIOD, GPIO12 | GPIO14);
 		#endif
 		#if defined(SEGGER_SYSVIEW_USE)
 			SEGGER_SYSVIEW_Print("Ledblink task executed.");

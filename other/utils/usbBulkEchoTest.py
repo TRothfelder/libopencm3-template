@@ -21,7 +21,7 @@ dev.set_configuration()
 # get an endpoint instance
 cfg = dev.get_active_configuration()
 intf = cfg[(0,0)]
-timeout = 10
+timeout = 100
 
 epOut = usb.util.find_descriptor(
     intf,
