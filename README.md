@@ -21,6 +21,7 @@ The series of articles from Chris Lalancette might be useful for you:
   - [Developing STM32 microcontroller code on Linux (Part 6 of 8, building and linking STM32 programs)](http://clalance.blogspot.de/2014/01/developing-stm32-microcontroller-code_13.html)
   - [Developing STM32 microcontroller code on Linux (Part 7 of 8, building and running a simple STM32 program)](http://clalance.blogspot.de/2014/01/developing-stm32-microcontroller-code_15.html)
 
+For C++ on embedded projects see [Practical Guide to Bare Metal C++](https://arobenko.gitbooks.io/bare_metal_cpp/content/) or the [PDF - Practical Guide to Bare Metal C++](other/bare_metal_cpp.pdf).
 
 External libraries
 ----------------
