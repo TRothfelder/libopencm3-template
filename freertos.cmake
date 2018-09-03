@@ -7,7 +7,8 @@ set(FREERTOS_PORT ARM_CM4F)
 set(FREERTOS_COMPILER GCC)
 set(FREERTOS_HEAPMANAGER heap_4)
 
-add_library(freertos "")
+
+add_library(freertos STATIC "")
 
 file(GLOB FREERTOS_SRC
     "${FREERTOS_DIR}/Source/*.c"

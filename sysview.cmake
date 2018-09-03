@@ -1,6 +1,6 @@
 set(SYSVIEW_DIR lib/SEGGER)
 
-add_library(sysview "")
+add_library(sysview STATIC "")
 
 
 file(GLOB SYSVIEW_SRC
