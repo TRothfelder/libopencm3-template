@@ -95,9 +95,9 @@ There are 4 different folders:
   - other
   - src
 
-The inc folder holds all the include files.
-The src folder holds all the sources.
-The lib folder holds all the external libraries.
+The inc folder holds all the include files.  
+The src folder holds all the sources.  
+The lib folder holds all the external libraries.  
 The other folder holds some scripts or binaries to make your life easier.
 
 Defines
