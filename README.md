@@ -71,7 +71,8 @@ From root directory:
 
 Make targets:
   - libopencm3 (builds LibOpenCM3)
-
+  - openocd (runs openocd - may need some tuning if you don't use a stm32f4)
+  - flash (flashes elf to controller - may need some tuning if you don't use a stm32f4)
 
 Flashing
 --------
@@ -81,8 +82,9 @@ IMPORTANT NOTE: I flashed [J_link](https://www.segger.com/products/debug-probes/
 
 From root directory:
 
-    $ openocd -f utils/openocd/jlink.cfg -c "flash_stm32f4 bin/fancyblink.elf"
-
+    $ openocd -f other/utils/openocd/jlink.cfg -s other/utils/openocd -c "flash_stm32f4 debug/fancyblink.elf"
+    $ #or simply:
+    $ make flash
 
 Structure
 ---------
@@ -90,8 +92,8 @@ Structure
 There are 4 different folders:
   - inc
   - lib
-  - src
   - other
+  - src
 
 The inc folder holds all the include files.
 The src folder holds all the sources.
@@ -101,7 +103,7 @@ The other folder holds some scripts or binaries to make your life easier.
 Defines
 ------
 
-Makefile defines some preprocessor defines depending on the settings.
+CMakefile defines some preprocessor defines depending on the settings.
 The defines are:
   - DEBUG (compiled as debug build)
   - SEGGER_SYSVIEW_USE (compiled with segger sysview)
@@ -111,6 +113,7 @@ Fine-tuning the build
 ---------------------
 
 To fine tune the build one needs to edit the cmake files.
+See the cmake files for comments on how to tweak your build.
 
 
 Start own project with this one as base
@@ -120,6 +123,9 @@ Using a STM32F4 Discovery or the STM32F407VGT6: you just need to add your custom
 
 Other Platform/CPU:
 You need to edit the following cmake files:
+  - CmakeLists.txt
+  - freertos.cmake
+  - maybe create a toolchain file
 
 
 
