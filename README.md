@@ -65,8 +65,8 @@ From root directory:
     $ git submodule update --init
     $ mkdir debug
     $ cd debug
-    $ cmake -DCMAKE_TOOLCHAIN_FILE=arm-none-eabi-gcc.cmake -DCMAKE_BUILD_TYPE=Debug ../ (only needs to be run once)
-    $ make libopencm3 (only needs to be run once)
+    $ cmake -DCMAKE_TOOLCHAIN_FILE=arm-none-eabi-gcc.cmake -DCMAKE_BUILD_TYPE=Debug ../ #(only needs to be run once)
+    $ make libopencm3 #(only needs to be run once)
     $ make
 
 Make targets:
