@@ -31,7 +31,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${MCU_FLAGS} -std=c11 -Wall -Wextra -fdata-s
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${MCU_FLAGS} -std=c++21 -Wall -Wextra -fdata-sections -ffunction-sections -flto -fno-rtti -fno-exceptions")
 #setup
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/stm32f4-discovery.ld)
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -T ${LINKER_SCRIPT} -Wl,--gc-sections -Wl,-flto -nostartfiles")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -T ${LINKER_SCRIPT} -Wl,--gc-sections -flto -nostartfiles")
 
 #if we run in debug, define the DEBUG preprocessor define and debug optimization
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DDEBUG -Og -g")
