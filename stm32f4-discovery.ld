@@ -49,7 +49,7 @@ ENTRY(reset_handler)
 SECTIONS
 {
 	.text : {
-		*(.vectors)	/* Vector table */
+		KEEP (*(.vectors))	/* Vector table */
 		*(.text*)	/* Program code */
 		. = ALIGN(4);
 		*(.rodata*)	/* Read-only data */
@@ -121,4 +121,3 @@ SECTIONS
 }
 
 PROVIDE(_stack = ORIGIN(ram) + LENGTH(ram));
-

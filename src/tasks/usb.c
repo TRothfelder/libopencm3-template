@@ -17,6 +17,7 @@
 #include <libopencm3/usb/usbstd.h>
 
 #include "tasks/usb.h"
+#include <ctype.h>
 
 xTaskHandle usbTaskHandle = NULL;
 
