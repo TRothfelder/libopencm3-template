@@ -6,7 +6,7 @@ STM32 and LibOpenCM3 template project
 ---------------------------------
 
 This repository provides a simple CMake project for easier reuse.
-It can be used with every processor which is supported by LibOpenCM3. Therefore one needs to edit the CMakeLists.txt and the linker file. However, the files provcided in this project are set up to work with the STM32F4 Discovery Board.
+It can be used with every processor which is supported by LibOpenCM3. Therefore one needs to edit the CMakeLists.txt and the linker file. However, the files provided in this project are set up to work with the STM32F4 Discovery Board.
 
 
 New to embedded projects?

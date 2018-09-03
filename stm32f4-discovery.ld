@@ -50,7 +50,8 @@ SECTIONS
 {
 	.text : {
 		KEEP (*(.vectors))	/* Vector table */
-		*(.text*)	/* Program code */
+		/* *(.text*)	*/ /* Program code */
+    *(.text .text.* .gnu.linkonce.t.*)
 		. = ALIGN(4);
 		*(.rodata*)	/* Read-only data */
 		. = ALIGN(4);
@@ -97,15 +98,17 @@ SECTIONS
 
 	.data : {
 		_data = .;
-		*(.data*)	/* Read-write initialized data */
+		/* *(.data*)	*/ /* Read-write initialized data */
+    *(.data .data.* .gnu.linkonce.d.*)
 		. = ALIGN(4);
 		_edata = .;
 	} >ram AT >rom
 	_data_loadaddr = LOADADDR(.data);
 
 	.bss : {
-		*(.bss*)	/* Read-write zero initialized data */
-		*(COMMON)
+		/* *(.bss*) */	/* Read-write zero initialized data */
+    *(.bss .bss.* .gnu.linkonce.b.*)
+    *(COMMON)
 		. = ALIGN(4);
 		_ebss = .;
 	} >ram
