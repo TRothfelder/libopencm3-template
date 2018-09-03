@@ -159,5 +159,8 @@ extern volatile uint16_t usCriticalNesting;										\
 #define portTASK_FUNCTION_PROTO( vFunction, pvParameters ) void vFunction( void *pvParameters )
 #define portTASK_FUNCTION( vFunction, pvParameters ) void vFunction( void *pvParameters )
 
-#endif /* PORTMACRO_H */
+#if !defined( portFORCE_USED )
+  #define portFORCE_USED  __attribute__(( used ))
+#endif
 
+#endif /* PORTMACRO_H */

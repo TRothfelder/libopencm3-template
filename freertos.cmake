@@ -16,6 +16,7 @@ add_library(freertos STATIC "")
 file(GLOB FREERTOS_SRC
     "${FREERTOS_DIR}/Source/*.c"
     "${FREERTOS_DIR}/Source/portable/${FREERTOS_COMPILER}/${FREERTOS_PORT}/*.c"
+    "${FREERTOS_DIR}/Source/portable/${FREERTOS_COMPILER}/${FREERTOS_PORT}/*.S"
     "${FREERTOS_DIR}/Source/portable/MemMang/${FREERTOS_HEAPMANAGER}.c"
 )
 

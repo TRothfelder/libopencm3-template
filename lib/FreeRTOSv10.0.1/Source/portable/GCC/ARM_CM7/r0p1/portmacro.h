@@ -237,10 +237,13 @@ portFORCE_INLINE static void vPortSetBASEPRI( uint32_t ulNewMaskValue )
 }
 /*-----------------------------------------------------------*/
 
+#if !defined( portFORCE_USED )
+  #define portFORCE_USED  __attribute__(( used ))
+#endif
+
 
 #ifdef __cplusplus
 }
 #endif
 
 #endif /* PORTMACRO_H */
-

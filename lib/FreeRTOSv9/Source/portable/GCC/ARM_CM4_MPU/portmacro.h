@@ -246,7 +246,7 @@ not necessary for to use this port.  They are defined so the common demo files
 /* Set the privilege level to user mode if xRunningPrivileged is false. */
 portFORCE_INLINE static void vPortResetPrivilege( BaseType_t xRunningPrivileged )
 {
-	if( xRunningPrivileged != pdTRUE ) 
+	if( xRunningPrivileged != pdTRUE )
 	{
 		__asm volatile ( " mrs r0, control 	\n" \
 						 " orr r0, #1 		\n" \
@@ -324,9 +324,12 @@ portFORCE_INLINE static void vPortSetBASEPRI( uint32_t ulNewMaskValue )
 /*-----------------------------------------------------------*/
 
 
+#if !defined( portFORCE_USED )
+  #define portFORCE_USED  __attribute__(( used ))
+#endif
+
 #ifdef __cplusplus
 }
 #endif
 
 #endif /* PORTMACRO_H */
-

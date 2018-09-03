@@ -173,10 +173,13 @@ int asm_set_ipl( uint32_t int uiNewIPL );
 #define portTASK_FUNCTION( vFunction, pvParameters )                         \
     void vFunction( void *pvParameters )
 
+#if !defined( portFORCE_USED )
+  #define portFORCE_USED  __attribute__(( used ))
+#endif
+
 #ifdef __cplusplus
 }
 #endif
 
 
 #endif /* PORTMACRO_H */
-

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.9)
 
 #name project. binary is called like the project name
-project(stm32f4-discovery-sample VERSION 1.0.1 DESCRIPTION "description")
+project(stm32f4-discovery-sample VERSION 1.0.0 DESCRIPTION "description")
 
 #check if we cross compile
 IF(NOT CMAKE_CROSSCOMPILING)

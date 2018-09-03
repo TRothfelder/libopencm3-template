@@ -166,6 +166,10 @@ extern uint32_t uxPortSetInterruptMaskFromISR( void );
 void vPortReclaimCSA( uint32_t *pxTCB );
 #define portCLEAN_UP_TCB( pxTCB )		vPortReclaimCSA( ( uint32_t * ) ( pxTCB ) )
 
+#if !defined( portFORCE_USED )
+  #define portFORCE_USED  __attribute__(( used ))
+#endif
+
 #ifdef __cplusplus
 }
 #endif

@@ -249,7 +249,7 @@ BaseType_t xPortInstallInterruptHandler( ISR_Handler_t pxHandler, uint32_t ulVec
 #endif
 
 #ifndef configISR_STACK_SIZE
-	/* Interrupt entry code will switch the stack in use to a dedicated system 
+	/* Interrupt entry code will switch the stack in use to a dedicated system
 	stack.
 
 	configISR_STACK_SIZE defines the number of 32-bit values that can be stored
@@ -283,9 +283,12 @@ above the max system call interrupt priority. */
 #define portAPIC_PROCESSOR_PRIORITY	( *( ( volatile uint32_t * ) ( configAPIC_BASE + 0xA0UL  ) ) )
 #define portASSERT_IF_INTERRUPT_PRIORITY_INVALID() configASSERT( ( portAPIC_PROCESSOR_PRIORITY ) <= ( portMAX_API_CALL_PRIORITY ) )
 
+#if !defined( portFORCE_USED )
+  #define portFORCE_USED  __attribute__(( used ))
+#endif
+
 #ifdef __cplusplus
 	} /* extern C */
 #endif
 
 #endif /* PORTMACRO_H */
-
