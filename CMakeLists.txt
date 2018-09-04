@@ -34,10 +34,12 @@ set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/stm32f4-discovery.ld)
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -T ${LINKER_SCRIPT} -Wl,--gc-sections -flto -nostartfiles")
 
 #if we run in debug, define the DEBUG preprocessor define and debug optimization
+# !!! sysview does not run without optimization !!!!
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DDEBUG -g3 -ggdb3 -Os")
 set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -DDEBUG -g3 -ggdb3 -Os")
 
 #if we run in release set following flags:
+# !!! sysview does not run without optimization !!!!
 set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -Os")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Os")
 set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE}")
