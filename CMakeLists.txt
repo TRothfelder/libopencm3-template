@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.9)
 
 #name project. binary is called like the project name
-project(stm32f4-discovery-sample VERSION 1.0.1 DESCRIPTION "description")
+project(stm32f4-discovery-sample VERSION 1.0.0 DESCRIPTION "description")
 
 #check if we cross compile
 IF(NOT CMAKE_CROSSCOMPILING)
@@ -17,7 +17,7 @@ add_custom_target(flash openocd -f ${CMAKE_SOURCE_DIR}/other/utils/openocd/jlink
 
 #add LibOpenCM3
 set(LIBOPENCM3_DIR ${CMAKE_SOURCE_DIR}/lib/libopencm3)
-add_custom_target(libopencm3 make WORKING_DIRECTORY ${LIBOPENCM3_DIR})
+add_custom_target(libopencm3 CFLAGS="-flto" make WORKING_DIRECTORY ${LIBOPENCM3_DIR})
 include_directories(${LIBOPENCM3_DIR}/include)
 link_directories(${LIBOPENCM3_DIR}/lib)
 #set the preprocessor definition for LibOpenCM3

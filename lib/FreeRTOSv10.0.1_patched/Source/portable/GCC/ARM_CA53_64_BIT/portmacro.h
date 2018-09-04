@@ -164,6 +164,10 @@ void vPortTaskUsesFPU( void );
 #define portNOP() __asm volatile( "NOP" )
 #define portINLINE __inline
 
+#if !defined( portFORCE_USED )
+  #define portFORCE_USED  __attribute__(( used ))
+#endif
+
 #ifdef __cplusplus
 	} /* extern C */
 #endif
@@ -206,4 +210,3 @@ number of bits implemented by the interrupt controller. */
 #define portICCRPR_RUNNING_PRIORITY_REGISTER 				( *( ( const volatile uint32_t * ) ( portINTERRUPT_CONTROLLER_CPU_INTERFACE_ADDRESS + portICCRPR_RUNNING_PRIORITY_OFFSET ) ) )
 
 #endif /* PORTMACRO_H */
-

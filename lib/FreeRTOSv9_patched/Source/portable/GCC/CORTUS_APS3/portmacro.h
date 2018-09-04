@@ -187,6 +187,10 @@ extern void vTaskExitCritical( void );
 #define portTASK_FUNCTION( vFunction, pvParameters ) void vFunction( void *pvParameters )
 /*---------------------------------------------------------------------------*/
 
+#if !defined( portFORCE_USED )
+  #define portFORCE_USED  __attribute__(( used ))
+#endif
+
 #ifdef __cplusplus
 }
 #endif

@@ -148,9 +148,12 @@ extern void vPortClearInterruptMaskFromISR( UBaseType_t );
 													}
 
 
+#if !defined( portFORCE_USED )
+  #define portFORCE_USED  __attribute__(( used ))
+#endif
+
 #ifdef __cplusplus
 }
 #endif
 
 #endif /* PORTMACRO_H */
-

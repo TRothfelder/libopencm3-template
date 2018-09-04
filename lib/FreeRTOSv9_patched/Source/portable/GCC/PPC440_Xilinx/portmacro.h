@@ -152,9 +152,12 @@ void vPortYield( void );
 void vPortSetupInterruptController( void );
 BaseType_t xPortInstallInterruptHandler( uint8_t ucInterruptID, XInterruptHandler pxHandler, void *pvCallBackRef );
 
+#if !defined( portFORCE_USED )
+  #define portFORCE_USED  __attribute__(( used ))
+#endif
+
 #ifdef __cplusplus
 }
 #endif
 
 #endif /* PORTMACRO_H */
-
